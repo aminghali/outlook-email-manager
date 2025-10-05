@@ -2,11 +2,13 @@
 
 Office.initialize = function (reason) {
     console.log('Office Add-in initialized');
-    
-    // Wait for DOM to be ready
-    document.addEventListener('DOMContentLoaded', function() {
+
+    // Initialize immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    } else {
         initializeApp();
-    });
+    }
 };
 
 // Email templates configuration
