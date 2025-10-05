@@ -31,14 +31,10 @@
   </Requirements>
 
   <FormSettings>
-    <Form xsi:type="ItemEdit">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="https://aminghali.github.io/outlook-email-manager/taskpane-compose.html"/>
-      </DesktopSettings>
-    </Form>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://aminghali.github.io/outlook-email-manager/taskpane-read.html"/>
+        <SourceLocation DefaultValue="https://aminghali.github.io/outlook-email-manager/taskpane-compose.html"/>
+        <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
   </FormSettings>
