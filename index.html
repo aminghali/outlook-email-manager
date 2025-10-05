@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Manager Pro - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        h1 {
+            font-size: 42px;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .emoji {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .card a:hover {
+            background: #5568d3;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .features h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .features ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .features li {
+            padding: 10px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .features li::before {
+            content: "✅ ";
+            margin-right: 8px;
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .cta h2 {
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .file-list {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        
+        .file-list h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .file-list ul {
+            list-style: none;
+        }
+        
+        .file-list li {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .file-list li:hover {
+            background: #e9ecef;
+        }
+        
+        .file-icon {
+            margin-right: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="emoji">📧</div>
+            <h1>Email Manager Pro</h1>
+            <p class="subtitle">Enterprise Outlook Web Add-in for Standardized Email Communication</p>
+        </header>
+        
+        <div class="cta">
+            <h2>🚀 Get Started in 5 Minutes</h2>
+            <p style="margin-bottom: 25px;">Deploy professional email templates to your entire organization</p>
+            <a href="QUICKSTART.md" class="cta-button">Quick Start Guide →</a>
+        </div>
+        
+        <div class="features">
+            <h2>✨ Key Features</h2>
+            <ul>
+                <li>Project-based email organization</li>
+                <li>Dropdown menus for quick selection</li>
+                <li>Standardized subject lines</li>
+                <li>Professional email headers</li>
+                <li>Real-time preview</li>
+                <li>Fully customizable</li>
+                <li>Enterprise-grade standards</li>
+                <li>Easy deployment</li>
+                <li>Works in Outlook Web & Desktop</li>
+                <li>No coding required</li>
+                <li>Free and open source</li>
+                <li>Microsoft 365 compatible</li>
+            </ul>
+        </div>
+        
+        <h2 style="margin-bottom: 25px; color: #667eea;">📚 Documentation</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>⚡ Quick Start</h3>
+                <p>Get up and running in just 5 minutes. Perfect for first-time users who want immediate results.</p>
+                <a href="QUICKSTART.md">Read Guide →</a>
+            </div>
+            
+            <div class="card">
+                <h3>📖 Complete Guide</h3>
+                <p>Comprehensive documentation covering all features, setup options, and best practices.</p>
+                <a href="README.md">Read Guide →</a>
+            </div>
+            
+            <div class="card">
+                <h3>🚀 Deployment</h3>
+                <p>Detailed deployment instructions for Azure, GitHub Pages, or your own server.</p>
+                <a href="DEPLOYMENT.md">Read Guide →</a>
+            </div>
+            
+            <div class="card">
+                <h3>🎨 Customization</h3>
+                <p>Learn how to customize projects, email types, colors, and formatting for your company.</p>
+                <a href="CUSTOMIZATION-GUIDE.md">Read Guide →</a>
+            </div>
+            
+            <div class="card">
+                <h3>📦 Project Overview</h3>
+                <p>Understand the project structure, features, and how everything works together.</p>
+                <a href="PROJECT-OVERVIEW.md">Read Overview →</a>
+            </div>
+            
+            <div class="card">
+                <h3>🔧 Configuration</h3>
+                <p>The main config file where you customize projects, email types, and settings.</p>
+                <a href="config.js">View Config →</a>
+            </div>
+        </div>
+        
+        <div class="file-list">
+            <h2>📁 Project Files</h2>
+            <ul>
+                <li>
+                    <span><span class="file-icon">📄</span> manifest.xml</span>
+                    <span>Add-in configuration</span>
+                </li>
+                <li>
+                    <span><span class="file-icon">📄</span> taskpane.html</span>
+                    <span>Main user interface</span>
+                </li>
+                <li>
+                    <span><span class="file-icon">📄</span> taskpane.js</span>
+                    <span>Application logic</span>
+                </li>
+                <li>
+                    <span><span class="file-icon">📄</span> config.js</span>
+                    <span>Customization settings</span>
+                </li>
+                <li>
+                    <span><span class="file-icon">📄</span> commands.html</span>
+                    <span>Command handling</span>
+                </li>
+                <li>
+                    <span><span class="file-icon">📄</span> package.json</span>
+                    <span>Project dependencies</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; border-radius: 8px; margin-bottom: 40px;">
+            <h3 style="color: #856404; margin-bottom: 10px;">💡 First Time Here?</h3>
+            <p style="color: #856404; margin: 0;">
+                Start with the <strong>QUICKSTART.md</strong> guide to deploy in 5 minutes. 
+                Then customize using the <strong>config.js</strong> file. 
+                Full documentation is available in the other guides.
+            </p>
+        </div>
+        
+        <div style="background: #d1ecf1; border-left: 4px solid #17a2b8; padding: 20px; border-radius: 8px; margin-bottom: 40px;">
+            <h3 style="color: #0c5460; margin-bottom: 10px;">🎯 What This Does</h3>
+            <p style="color: #0c5460; margin: 0;">
+                Adds a button to Outlook that lets users select a project and email type from dropdowns. 
+                It then automatically formats the subject line and adds a professional header to the email. 
+                This ensures all company emails follow the same standard format used by Fortune 500 companies.
+            </p>
+        </div>
+        
+        <footer>
+            <p><strong>Email Manager Pro</strong> - Enterprise Email Standardization</p>
+            <p style="margin-top: 10px;">Built for Microsoft Outlook | Works with Microsoft 365</p>
+            <p style="margin-top: 15px; font-size: 14px;">
+                Need help? Check the documentation above or contact your IT administrator.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

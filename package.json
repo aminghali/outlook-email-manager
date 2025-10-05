@@ -1,0 +1,40 @@
+{
+  "name": "outlook-email-manager-pro",
+  "version": "1.0.0",
+  "description": "Enterprise Outlook Web Add-in for standardizing email subjects and headers",
+  "main": "taskpane.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1",
+    "start:https": "http-server -p 8080 -S -C cert.pem -K key.pem",
+    "dev": "npm run start",
+    "validate": "node scripts/validate-manifest.js",
+    "generate-ssl": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem",
+    "deploy:azure": "node scripts/deploy-azure.js",
+    "deploy:github": "node scripts/deploy-github.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "outlook",
+    "office-addin",
+    "email",
+    "template",
+    "enterprise",
+    "productivity"
+  ],
+  "author": "Your Company Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "office-addin-manifest": "^1.12.3",
+    "office-addin-debugging": "^5.0.11"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourcompany/outlook-email-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/yourcompany/outlook-email-manager/issues"
+  },
+  "homepage": "https://github.com/yourcompany/outlook-email-manager#readme"
+}
