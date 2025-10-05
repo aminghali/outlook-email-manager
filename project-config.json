@@ -1,0 +1,273 @@
+{
+  "projects": [
+    {
+      "code": "PROJECT-001",
+      "name": "Alpha Initiative",
+      "displayName": "PROJECT-001: Alpha Initiative",
+      "category": "PROJECT-001",
+      "categoryColor": "Preset0",
+      "projectManager": {
+        "name": "Sarah Johnson",
+        "email": "sarah.johnson@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Michael Chen",
+          "email": "michael.chen@company.com",
+          "role": "Lead Developer"
+        },
+        {
+          "name": "Emma Williams",
+          "email": "emma.williams@company.com",
+          "role": "Business Analyst"
+        }
+      ],
+      "clientGroup": {
+        "name": "Alpha Client Team",
+        "email": "alpha-client@clientcompany.com"
+      },
+      "contractors": [
+        {
+          "name": "Tech Solutions Inc",
+          "email": "contact@techsolutions.com"
+        }
+      ]
+    },
+    {
+      "code": "PROJECT-002",
+      "name": "Beta Development",
+      "displayName": "PROJECT-002: Beta Development",
+      "category": "PROJECT-002",
+      "categoryColor": "Preset1",
+      "projectManager": {
+        "name": "David Martinez",
+        "email": "david.martinez@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Lisa Anderson",
+          "email": "lisa.anderson@company.com",
+          "role": "Senior Developer"
+        },
+        {
+          "name": "James Taylor",
+          "email": "james.taylor@company.com",
+          "role": "QA Lead"
+        }
+      ],
+      "clientGroup": {
+        "name": "Beta Partners Group",
+        "email": "partners@betacorp.com"
+      },
+      "contractors": [
+        {
+          "name": "CloudOps Consulting",
+          "email": "info@cloudops.com"
+        }
+      ]
+    },
+    {
+      "code": "PROJECT-003",
+      "name": "Gamma Rollout",
+      "displayName": "PROJECT-003: Gamma Rollout",
+      "category": "PROJECT-003",
+      "categoryColor": "Preset2",
+      "projectManager": {
+        "name": "Rachel Kim",
+        "email": "rachel.kim@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Kevin Brown",
+          "email": "kevin.brown@company.com",
+          "role": "DevOps Engineer"
+        }
+      ],
+      "clientGroup": {
+        "name": "Gamma Stakeholders",
+        "email": "stakeholders@gamma.com"
+      },
+      "contractors": []
+    },
+    {
+      "code": "PROJECT-004",
+      "name": "Delta Integration",
+      "displayName": "PROJECT-004: Delta Integration",
+      "category": "PROJECT-004",
+      "categoryColor": "Preset3",
+      "projectManager": {
+        "name": "Thomas Lee",
+        "email": "thomas.lee@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Jennifer White",
+          "email": "jennifer.white@company.com",
+          "role": "Integration Specialist"
+        }
+      ],
+      "clientGroup": {
+        "name": "Delta Integration Team",
+        "email": "integration@delta.com"
+      },
+      "contractors": [
+        {
+          "name": "API Connect Inc",
+          "email": "support@apiconnect.com"
+        }
+      ]
+    },
+    {
+      "code": "PROJECT-005",
+      "name": "Epsilon Platform",
+      "displayName": "PROJECT-005: Epsilon Platform",
+      "category": "PROJECT-005",
+      "categoryColor": "Preset4",
+      "projectManager": {
+        "name": "Amanda Garcia",
+        "email": "amanda.garcia@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Robert Davis",
+          "email": "robert.davis@company.com",
+          "role": "Platform Architect"
+        }
+      ],
+      "clientGroup": {
+        "name": "Epsilon Users Group",
+        "email": "users@epsilon.com"
+      },
+      "contractors": []
+    },
+    {
+      "code": "PROJECT-006",
+      "name": "Zeta Migration",
+      "displayName": "PROJECT-006: Zeta Migration",
+      "category": "PROJECT-006",
+      "categoryColor": "Preset5",
+      "projectManager": {
+        "name": "Christopher Moore",
+        "email": "christopher.moore@company.com"
+      },
+      "teamMembers": [
+        {
+          "name": "Patricia Wilson",
+          "email": "patricia.wilson@company.com",
+          "role": "Migration Lead"
+        }
+      ],
+      "clientGroup": {
+        "name": "Zeta Legacy Team",
+        "email": "legacy@zeta.com"
+      },
+      "contractors": [
+        {
+          "name": "Data Migration Pro",
+          "email": "contact@datamigrationpro.com"
+        }
+      ]
+    },
+    {
+      "code": "INTERNAL",
+      "name": "Internal Communication",
+      "displayName": "Internal Communication",
+      "category": "Internal",
+      "categoryColor": "Preset20",
+      "projectManager": null,
+      "teamMembers": [],
+      "clientGroup": null,
+      "contractors": []
+    },
+    {
+      "code": "CLIENT",
+      "name": "Client Relations",
+      "displayName": "Client Relations",
+      "category": "Client Relations",
+      "categoryColor": "Preset6",
+      "projectManager": {
+        "name": "Marketing Team",
+        "email": "client.relations@company.com"
+      },
+      "teamMembers": [],
+      "clientGroup": null,
+      "contractors": []
+    },
+    {
+      "code": "VENDOR",
+      "name": "Vendor Management",
+      "displayName": "Vendor Management",
+      "category": "Vendor",
+      "categoryColor": "Preset7",
+      "projectManager": {
+        "name": "Procurement Team",
+        "email": "procurement@company.com"
+      },
+      "teamMembers": [],
+      "clientGroup": null,
+      "contractors": []
+    }
+  ],
+  "emailTypes": [
+    {
+      "code": "UPDATE",
+      "name": "Status Update",
+      "category": "Status Update",
+      "priority": "Normal"
+    },
+    {
+      "code": "REQUEST",
+      "name": "Action Required",
+      "category": "Action Required",
+      "priority": "Normal"
+    },
+    {
+      "code": "MEETING",
+      "name": "Meeting Request",
+      "category": "Meeting",
+      "priority": "Normal"
+    },
+    {
+      "code": "FOLLOWUP",
+      "name": "Follow-Up",
+      "category": "Follow-Up",
+      "priority": "Normal"
+    },
+    {
+      "code": "REVIEW",
+      "name": "Review Requested",
+      "category": "Review",
+      "priority": "Normal"
+    },
+    {
+      "code": "APPROVAL",
+      "name": "Approval Needed",
+      "category": "Approval Required",
+      "priority": "High"
+    },
+    {
+      "code": "ANNOUNCEMENT",
+      "name": "Important Announcement",
+      "category": "Announcement",
+      "priority": "Normal"
+    },
+    {
+      "code": "REPORT",
+      "name": "Report Attached",
+      "category": "Report",
+      "priority": "Normal"
+    },
+    {
+      "code": "URGENT",
+      "name": "🔴 URGENT",
+      "category": "Urgent",
+      "priority": "High"
+    },
+    {
+      "code": "FYI",
+      "name": "For Your Information",
+      "category": "FYI",
+      "priority": "Low"
+    }
+  ]
+}

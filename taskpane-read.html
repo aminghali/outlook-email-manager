@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Manager Pro - Read</title>
+
+    <!-- Office.js -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #0078d4;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .email-info-box {
+            background: #f9f9f9;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .email-info-title {
+            font-weight: 600;
+            color: #0078d4;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .email-info-item {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .email-info-label {
+            font-weight: 600;
+            color: #666;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .current-categories {
+            margin-top: 10px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 4px 4px 4px 0;
+            border-radius: 12px;
+            background: #0078d4;
+            color: white;
+            font-size: 11px;
+        }
+
+        .no-categories {
+            color: #999;
+            font-style: italic;
+            font-size: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 14px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d1d1;
+            border-radius: 4px;
+            font-size: 14px;
+            background: white;
+            transition: border-color 0.2s;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #0078d4;
+            box-shadow: 0 0 0 3px rgba(0,120,212,0.1);
+        }
+
+        .suggestion-box {
+            background: #fff9e6;
+            border: 1px solid #ffd700;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+
+        .suggestion-title {
+            font-weight: 600;
+            color: #cc8800;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .suggestion-text {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .suggestion-btn {
+            background: #ffd700;
+            color: #333;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .suggestion-btn:hover {
+            background: #ffed4e;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #0078d4;
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #006cbd;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,120,212,0.3);
+        }
+
+        .btn-secondary {
+            background: #f3f3f3;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e1e1e1;
+        }
+
+        .btn-danger {
+            background: #d13438;
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #a4262c;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status-message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: none;
+        }
+
+        .status-message.success {
+            background: #dff6dd;
+            color: #107c10;
+            border-left: 3px solid #107c10;
+            display: block;
+        }
+
+        .status-message.error {
+            background: #fde7e9;
+            color: #a4262c;
+            border-left: 3px solid #a4262c;
+            display: block;
+        }
+
+        .info-box {
+            background: #e8f4fd;
+            border-left: 3px solid #0078d4;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e1e1e1;
+            margin: 20px 0;
+        }
+
+        .categories-to-add {
+            margin-top: 15px;
+        }
+
+        .preview-label {
+            font-weight: 600;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Email Manager Pro - Read</h1>
+        <p class="subtitle">Quickly categorize and organize received emails</p>
+
+        <div class="email-info-box">
+            <div class="email-info-title">📨 Email Information</div>
+            <div class="email-info-item">
+                <span class="email-info-label">From:</span>
+                <span id="emailFrom">Loading...</span>
+            </div>
+            <div class="email-info-item">
+                <span class="email-info-label">Subject:</span>
+                <span id="emailSubject">Loading...</span>
+            </div>
+            <div class="current-categories">
+                <div class="preview-label">Current Categories:</div>
+                <div id="currentCategories"></div>
+            </div>
+        </div>
+
+        <div id="suggestionBox" class="suggestion-box" style="display: none;">
+            <div class="suggestion-title">💡 Smart Suggestion</div>
+            <div class="suggestion-text" id="suggestionText"></div>
+            <button class="suggestion-btn" id="applySuggestionBtn">Apply Suggestion</button>
+        </div>
+
+        <div class="form-group">
+            <label for="projectSelect">Select Project to Categorize</label>
+            <select id="projectSelect">
+                <option value="">-- Choose a project --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="emailTypeSelect">Email Type (Optional)</label>
+            <select id="emailTypeSelect">
+                <option value="">-- Choose email type --</option>
+            </select>
+        </div>
+
+        <div class="categories-to-add">
+            <div class="preview-label">Categories to Apply:</div>
+            <div id="categoryPreview"></div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-primary" id="applyCategoriesBtn" disabled>Apply Categories</button>
+            <button class="btn-danger" id="removeCategoriesBtn">Remove All Categories</button>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <div class="divider"></div>
+
+        <div class="info-box">
+            💡 <strong>Pro Tip:</strong> Use categories to organize your inbox. Set up Outlook rules to automatically move categorized emails to specific folders.
+        </div>
+    </div>
+
+    <script src="project-config.json"></script>
+    <script src="taskpane-read.js"></script>
+</body>
+</html>
