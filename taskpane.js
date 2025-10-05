@@ -46,38 +46,60 @@ let currentSelection = {
 };
 
 function initializeApp() {
+    console.log('initializeApp() called');
+    console.log('document.readyState:', document.readyState);
+
     // Get DOM elements
     const projectSelect = document.getElementById('projectSelect');
     const emailTypeSelect = document.getElementById('emailTypeSelect');
     const customSubject = document.getElementById('customSubject');
     const applyBtn = document.getElementById('applyBtn');
     const clearBtn = document.getElementById('clearBtn');
-    
+
+    console.log('DOM elements:', {
+        projectSelect: !!projectSelect,
+        emailTypeSelect: !!emailTypeSelect,
+        customSubject: !!customSubject,
+        applyBtn: !!applyBtn,
+        clearBtn: !!clearBtn
+    });
+
+    if (!projectSelect || !emailTypeSelect || !customSubject || !applyBtn || !clearBtn) {
+        console.error('ERROR: One or more DOM elements not found!');
+        return;
+    }
+
     // Add event listeners
     projectSelect.addEventListener('change', handleSelectionChange);
     emailTypeSelect.addEventListener('change', handleSelectionChange);
     customSubject.addEventListener('input', handleSelectionChange);
     applyBtn.addEventListener('click', applyTemplate);
     clearBtn.addEventListener('click', clearForm);
-    
-    console.log('App initialized successfully');
+
+    console.log('App initialized successfully - event listeners attached');
 }
 
 function handleSelectionChange() {
+    console.log('handleSelectionChange() triggered');
+
     const projectSelect = document.getElementById('projectSelect');
     const emailTypeSelect = document.getElementById('emailTypeSelect');
     const customSubject = document.getElementById('customSubject');
     const applyBtn = document.getElementById('applyBtn');
-    
+
     // Update current selection
     currentSelection.project = projectSelect.value;
     currentSelection.emailType = emailTypeSelect.value;
     currentSelection.customSubject = customSubject.value.trim();
-    
+
+    console.log('Current selection:', currentSelection);
+
     // Enable apply button if required fields are filled
     const isValid = currentSelection.project && currentSelection.emailType;
     applyBtn.disabled = !isValid;
-    
+
+    console.log('Apply button enabled:', !applyBtn.disabled);
+
     // Update preview
     updatePreview();
 }
